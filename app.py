@@ -23,7 +23,7 @@ def DbsPrediction():
     q = float(request.form.get("q"))
     model = joblib.load("dbs.jl")
     r = model.predict([[q]])
-    return(render_template("DbsPrediction.html",r=r))
+    return(render_template("DbsPrediction.html",r=r[0][0]))
 
 if __name__ == "__main__":
     app.run()
